@@ -1,20 +1,28 @@
 {
-  "name": "chat2",
+  "name": "chatreal",
   "version": "1.0.0",
-  "description": "",
+  "description": "Cambios por Alvaro\r TODO ESTO LO GENERAMOS EN LA CONSOLA DE VISUAL STUDIO O CMD\r PASO 1\r Generamos el archivo init.\r COMANDO:\r npm init --yes",
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edu7v7/chatReal.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "bugs": {
+    "url": "https://github.com/Edu7v7/chatReal/issues"
+  },
+  "homepage": "https://github.com/Edu7v7/chatReal#readme",
+  "devDependencies": {
     "express": "^4.18.1",
-    "mongoose": "^6.4.0",
+    "nodemon": "^2.0.16",
     "socket.io": "^4.5.1"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.16"
+  "dependencies": {
+    "mongoose": "^6.4.0"
   }
 }
