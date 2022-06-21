@@ -17,3 +17,7 @@ body{
     color: gray;
     font-style: italic;
 }
+
+.navbar-brand img {
+    width: 60px;
+}
