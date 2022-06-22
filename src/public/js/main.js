@@ -4,7 +4,7 @@ $(function() {
     //este es la conexion del socket del cliente    
     const socket = io();
 
-    ////obteniendo los elementos de DOM de nuestro formulario de la interface.
+    //obteniendo los elementos de DOM de nuestro formulario de la interface.
     const messageForm = $('#message-form');
     const messageBox = $('#message');
     const chat = $('#chat');
@@ -49,6 +49,7 @@ $(function() {
    socket.on('new message', function(data){
     // ahora vamos a recibir un objeto 
         chat.append('<b>'+ data.nick +'<b/>: ' +data.msg+ '<br/>');
+        // chat.append(`<p><span>${data.nick}:</span><span>${data.msg}</span></p>`);
    }); 
 
 

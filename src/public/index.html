@@ -109,10 +109,10 @@
                 <div id="chat" class="card-body"></div>
                 <form id="message-form" class="card-footer">
                     <div class="input-group">
-                        <input type="text" id="message" class="form-control">
+                        <input type="text" id="message" class="form-control" placeholder="Mensaje" required>
                         <div class="input-group-append">
                         <button type="submit" class="btn btn-dark">
-                            <i class="fa-solid fa-reply"></i> Enviar</button>
+                            Enviar <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                     </div>
                     </div>
                     
@@ -149,15 +149,27 @@
         fecha = new Date();
         hora = fecha.getHours();
 
-        if(hora >= 0 && hora < 3) { // Este muestra el formulario
+        if(hora >= 0 && hora < 6) { // Este muestra el formulario
           texto = "Buenas madrugadas";
           imagen = "/img/madrugada.jpg";
           document.getElementById('contentForm').classList.add('d-block');
         }
 
-        if(hora >= 3 && hora < 6) { // Este muestra el chat
+        if(hora >= 6 && hora < 12) { // Este muestra el chat
           texto = "Buenos días";
           imagen = "/img/manana.jpg";
+          document.getElementById('contentForm').classList.add('d-block');
+        }
+
+        if(hora >= 12 && hora < 18) { // Este muestra el formulario
+          texto = "Buenas tardes";
+          imagen = "/img/tarde.jpg";
+          document.getElementById('contentChat').classList.add('d-block');
+        }
+
+        if(hora >= 18 && hora < 0) { // Este muestra el chat
+          texto = "Buenas noches";
+          imagen = "/img/noche.jpg";
           document.getElementById('contentChat').classList.add('d-block');
         }
 
