@@ -12,7 +12,7 @@ const server = http.createServer(app);
 const io = require('socket.io')(server);
 
 //conexion a la base de datos
-mongoose.connect('mongodb://localhost/chat-database')
+mongoose.connect('mongodb://0.0.0.0/chat-database')
 .then(db => console.log('base de datos conectada'))
 .catch(err => console.log(err));
 

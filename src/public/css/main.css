@@ -5,7 +5,9 @@ body{
 
 }
 
-#contentWrap{
+#contentWrap, 
+#contentChat,
+#contentForm {
     display: none;
 }
 
@@ -16,4 +18,12 @@ body{
 .whisper {
     color: gray;
     font-style: italic;
+}
+
+.navbar-brand img {
+    width: 60px;
+}
+.title-saludo {
+    font-size: 1.5rem;
+    color: white;
 }

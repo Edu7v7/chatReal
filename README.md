@@ -1,20 +1,24 @@
+Cambios por Alvaro
 TODO ESTO LO GENERAMOS EN LA CONSOLA DE VISUAL STUDIO O CMD
 PASO 1
 POR EDUARDO.....................................
 Generamos el archivo init.
 COMANDO:
-npm init --yes
+npm init --yes 
+-- HECHO ---
 
 PASO 2
 Ahora instalamos dependencias, instalamos el Framewor de Express.
 Express nos ayuda para escribir aplicaciones del servidor.
 COMANDO:
-npm install express
+npm install express 
+-- HECHO ---
 
 PASO 3
 WebSocket: instalamos el modulo socket.
 COMANDO:
 npm install socket.io
+-- HECHO ---
 
 PASO 4
 Instalamos el modulo de node js llamado nodemon.
@@ -24,6 +28,7 @@ al escribir el proyecto.
 Me ayuda el modulo a actulisarse automaticamente cada cambio que le demos.
 COMANDO:
 npm istall nodemon -D
+-- HECHO ---
 
 "scripts": {
     "start": "nodemon src/index.js"
@@ -34,3 +39,6 @@ instalamos un biblioteca nos permite conectarnos y tambien nos permite
 definir los datos que se almacenaran en la BD. la biblioteca es mongoose
 COMANDO:
 npm install mongoose
+-- HECHO ---
+
+Ojo: Para ejecutar el proyecto se tiene que digitar el siguiente comando "npm run start"
