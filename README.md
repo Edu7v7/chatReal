@@ -38,3 +38,6 @@ instalamos un biblioteca nos permite conectarnos y tambien nos permite
 definir los datos que se almacenaran en la BD. la biblioteca es mongoose
 COMANDO:
 npm install mongoose
+-- HECHO ---
+
+Ojo: Para ejecutar el proyecto se tiene que digitar el siguiente comando "npm run start"

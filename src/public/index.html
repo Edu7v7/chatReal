@@ -17,7 +17,7 @@
     <script src="/socket.io/socket.io.js" charset="utf-8"></script>
     <script src="/js/main.js" charset="utf-8"></script>
 </head>
-<body>
+<body onload="mostrarChat()">
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
@@ -58,7 +58,28 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container bg-light mt-5" id="contentForm">
+      <div class="row">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container" id="contentChat">
         <div class="row">
             <div class="card col-md-4 mt-5 mx-auto" id="nickWrap">
                 <div class="card-header">
@@ -110,7 +131,42 @@
         </div>
     </div>
 
-</div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div id="saludo" class="text-center mb-5 mt-5">
+          <img name="tiempo">
+          <div id="txtsaludo" class="title-saludo"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script>
+      function mostrarChat() {
+        fecha = new Date();
+        hora = fecha.getHours();
+
+        if(hora >= 0 && hora < 3) { // Este muestra el formulario
+          texto = "Buenas madrugadas";
+          imagen = "/img/madrugada.jpg";
+          document.getElementById('contentForm').classList.add('d-block');
+        }
+
+        if(hora >= 3 && hora < 6) { // Este muestra el chat
+          texto = "Buenos días";
+          imagen = "/img/manana.jpg";
+          document.getElementById('contentChat').classList.add('d-block');
+        }
+
+        document.images["tiempo"].src = imagen;
+
+        document.getElementById('txtsaludo').innerHTML = texto;
+
+      }
+    </script>
 
 </body>
 </html>
