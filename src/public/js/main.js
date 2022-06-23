@@ -64,7 +64,7 @@ $(function() {
 });
 
     socket.on('whisper', data => {
-        chat.append(`<p class="whisper"><b>${data.nick}:</b>${data.msg}</p>`);
+        chat.append(`<p class="whisper"><b>${data.nick}: </b>${data.msg}</p>`);
     });
 
     //carga los viejos mensajes
