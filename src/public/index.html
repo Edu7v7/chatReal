@@ -155,10 +155,10 @@
           document.getElementById('contentForm').classList.add('d-block');
         }
 
-        if(hora >= 6 && hora < 12) { // Este muestra el chat
+        if(hora >= 6 && hora < 25) { // Este muestra el chat
           texto = "Buenos días";
           imagen = "/img/manana.jpg";
-          document.getElementById('contentForm').classList.add('d-block');
+          document.getElementById('contentChat').classList.add('d-block');
         }
 
         if(hora >= 12 && hora < 18) { // Este muestra el formulario
@@ -167,10 +167,10 @@
           document.getElementById('contentChat').classList.add('d-block');
         }
 
-        if(hora >= 18 && hora < 0) { // Este muestra el chat
+        if(hora >= 18 && hora < 10) { // Este muestra el chat
           texto = "Buenas noches";
           imagen = "/img/noche.jpg";
-          document.getElementById('contentChat').classList.add('d-block');
+          document.getElementById('contentForm').classList.add('d-block');
         }
 
         document.images["tiempo"].src = imagen;
