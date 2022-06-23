@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" href="/img/icon.chat.svg" type="image/x-icon">
-    <title>Chat JavaScript</title>
+    <title>Chat Familia Punto Com</title>
     <!-- FUENTE DE ICONOS -->
     <script src="https://kit.fontawesome.com/c1e6ca8ee2.js" crossorigin="anonymous"></script>
 
@@ -19,7 +19,7 @@
 </head>
 <body onload="mostrarChat()">
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-fixed navbar-expand-lg navbar-dark">
         <div class="container">
           <a class="navbar-brand" href="/">
             <img src="/img/icon.chat.svg" alt="">
@@ -28,82 +28,82 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
+                <a class="nav-link" href="#">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a class="nav-link" href="#">Project</a>
               </li>
             </ul>
             <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+              <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+              <button class="btn btn-outline-info" type="submit">Apoyanos</button>
             </form>
           </div>
         </div>
     </nav>
 
-    <div class="container bg-light mt-5" id="contentForm">
-      <div class="row">
-        <form>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-          </div>
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </div>
+    <div class="container container-primary">
 
-    <div class="container" id="contentChat">
+      <div class="container">
         <div class="row">
-            <div class="card col-md-4 mt-5 mx-auto" id="nickWrap">
-                <div class="card-header">
-                    <h2>Bienvenido al Chat - Recibiendo las sugerencias</h2>
-                </div>
-                <p id="nickError"></p>
-                <div class="card-body">
-                    <form id="nickform">
-                        <input type="text" id="nickName" class="form-control" placeholder="Ingresa tu Nombre de Usuario" required>
-                        <button type="submit" class="btn btn-dark mt-2">
-                            <i class="fa fa-sign-in"></i> Ingresar</button>
-                    </form>
-                </div>
-            </div>
+          <div id="saludo" class="text-center mt-5">
+            <img name="tiempo" class="w-100">
+            <h1 id="txtsaludo" class="title-saludo mt-5"></h1>
+          </div>
         </div>
-    </div>
+      </div>
 
-
-    <div class="container" id="contentWrap">
+      <div class="container content-form bg-light mt-5" id="contentForm">
         <div class="row">
-        <div class="col-md-6 offset-md-1 mt-4">
+          <form class="my-4">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+  
+      <div class="container content-chat" id="contentChat">
+          <div class="row">
+              <div class="card col-md-4 mt-5 mx-auto" id="nickWrap">
+                  <div class="card-header">
+                      <h5 class="text-center">Bienvenido al Chat de radio, Familia Punto Com</h5>
+                  </div>
+                  <p id="nickError"></p>
+                  <div class="card-body">
+                      <form id="nickform" class="text-center">
+                          <input type="text" id="nickName" class="form-control" placeholder="Ingresa tu nombre para conversar" required>
+                          <button type="submit" class="btn btn-dark mt-4">
+                              <i class="fa fa-sign-in"></i> Ingresar</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+  
+      <div class="container" id="contentWrap">
+        <div class="row">
+          <div class="col-md-8 mt-4">
             <div class="card">
                 <div class="card-header">
-                    <h3>Chatiemos</h3>
+                    <h3>Tema del día: Ciber delincuencia</h3>
                 </div>
 
                 <div id="chat" class="card-body"></div>
@@ -119,27 +119,23 @@
                 </form>
             </div>
         </div>
-
-        <div class="card col-md-3">
-            <div class="card-header">
-                <h3>Usuarios Conectados</h3>
+            <div class="card col-md-4 mt-4">
+                <div class="card-header">
+                    <h3>Usuarios Conectados</h3>
+                </div>
+    
+                <div class="card-body">
+                    <div id="usernames"></div>
+                </div>
             </div>
-
-            <div class="card-body">
-                <div id="usernames"></div>
-            </div>
-        </div>
-    </div>
-
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div id="saludo" class="text-center mb-5 mt-5">
-          <img name="tiempo">
-          <div id="txtsaludo" class="title-saludo"></div>
-        </div>
+          
+  
       </div>
+  
+      </div>
+  
+      
+
     </div>
 
 
@@ -149,29 +145,41 @@
         fecha = new Date();
         hora = fecha.getHours();
 
+        
         if(hora >= 0 && hora < 6) { // Este muestra el formulario
           texto = "Buenas madrugadas";
           imagen = "/img/madrugada.jpg";
           document.getElementById('contentForm').classList.add('d-block');
         }
 
-        if(hora >= 6 && hora < 25) { // Este muestra el chat
+<<<<<<< HEAD
+        if(hora >= 6 && hora < 12) { // Este muestra el chat
           texto = "Buenos días";
           imagen = "/img/manana.jpg";
+=======
+        if(hora >= 6 && hora < 12) { // Este muestra el chat
+          texto = "Tema del día: Ciber Delincuencia";
+          imagen = "/img/bg-primary.jpg";
+>>>>>>> a17fc3c7af397b7a3dccc95067147d29dff95cbb
           document.getElementById('contentChat').classList.add('d-block');
         }
 
         if(hora >= 12 && hora < 18) { // Este muestra el formulario
           texto = "Buenas tardes";
           imagen = "/img/tarde.jpg";
-          document.getElementById('contentChat').classList.add('d-block');
+          document.getElementById('contentForm').classList.add('d-block');
         }
 
+<<<<<<< HEAD
         if(hora >= 18 && hora < 10) { // Este muestra el chat
+=======
+        if(hora >= 18 && hora < 24 ) { // Este muestra el chat
+>>>>>>> a17fc3c7af397b7a3dccc95067147d29dff95cbb
           texto = "Buenas noches";
           imagen = "/img/noche.jpg";
           document.getElementById('contentForm').classList.add('d-block');
         }
+
 
         document.images["tiempo"].src = imagen;
 
