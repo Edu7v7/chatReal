@@ -149,11 +149,7 @@
         fecha = new Date();
         hora = fecha.getHours();
 
-        if(hora >= 0 && hora < 6) { // Este muestra el formulario
-          texto = "Buenas madrugadas";
-          imagen = "/img/madrugada.jpg";
-          document.getElementById('contentForm').classList.add('d-block');
-        }
+        
 
         if(hora >= 6 && hora < 12) { // Este muestra el chat
           texto = "Buenos días";
@@ -171,6 +167,12 @@
           texto = "Buenas noches";
           imagen = "/img/noche.jpg";
           document.getElementById('contentChat').classList.add('d-block');
+        }
+
+        if(hora >= 0 && hora < 6) { // Este muestra el formulario
+          texto = "Buenas madrugadas";
+          imagen = "/img/madrugada.jpg";
+          document.getElementById('contentForm').classList.add('d-block');
         }
 
         document.images["tiempo"].src = imagen;
