@@ -3,6 +3,7 @@ const bdchat = require('./modelsbd/bdchat');
 //es la conexion del socket del servidor
 module.exports = function(io){
 
+//Objeto de usuarios
     let users = {};
 
     //io tiene a todos los usuarios conectados
@@ -28,7 +29,7 @@ module.exports = function(io){
             //analisando el xontenido del mensaje que se 
             //le va a enviar.
 
-            "joe asasasasas"
+            "Enviando datos privados"
             var msg = data.trim();
 
             if(msg.substr(0, 3) === '/p '){
