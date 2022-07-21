@@ -4,7 +4,8 @@ $(function() {
     //este es la conexion del socket del cliente    
     const socket = io();
 
-    //obteniendo los elementos de DOM de nuestro formulario de la interface.
+    //obteniendo los elementos de DOM de nuestro formulario de la interface 
+    //un elemento html utilizando Jquery
     const messageForm = $('#message-form');
     const messageBox = $('#message');
     const chat = $('#chat');
@@ -16,6 +17,8 @@ $(function() {
 
     const users = $('#usernames');
 
+    //Validamos y enviamos al servidor , cuando obtenga este evento de enviar 
+    //datos al servidor, voy a ejecutar con sockets envirle un datos.
     nickForm.submit(e => {
         e.preventDefault();
         socket.emit('new user', nickName.val(), data =>{
@@ -67,7 +70,7 @@ $(function() {
         chat.append(`<p class="whisper"><b>${data.nick}: </b>${data.msg}</p>`);
     });
 
-    //carga los viejos mensajes
+    //carga los viejos mensajesc desde la base de datos
     socket.on('carga los viejos mensajes', msgs => {
         for(let i = 0; i > msgs.length; i++){
             displayMsg(msgs[i]);
