@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOOTSTRAP -->
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="/img/icon.chat.svg" type="image/x-icon">
+    <title>Chat Familia Punto Com</title>
+    <!-- FUENTE DE ICONOS -->
+    <script src="https://kit.fontawesome.com/c1e6ca8ee2.js" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> --> 
+    <script src="/socket.io/socket.io.js" charset="utf-8"></script>
+    <script src="/js/main.js" charset="utf-8"></script>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600,700" rel="stylesheet">
+</head>
+<body onload="mostrarChat()">
+    <header class="item header margin-top-0">
+        <div class="wrapper">
+            <nav role="navigation" class="navbar navbar-white navbar-embossed navbar-lg navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button data-target="#navbar-collapse-02" data-toggle="collapse" class="navbar-toggle" type="button">
+                    <i class="fa fa-bars"></i>
+                    <span class="sr-only">Toggle navigation</span>
+                    </button>
+                    <a href="home.html" class="navbar-brand brand"> SCORILO </a>
+                </div>
+                <div id="navbar-collapse-02" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="propClone"><a href="index.html">Home</a></li>
+                        <li class="propClone"><a href="shop.html">Shop</a></li>
+                        <li class="propClone"><a href="/chat.html">Chat</a></li>
+                        <li class="propClone"><a href="checkout.html">Checkout</a></li>
+                        <li class="propClone"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container container-primary">
+
+      <div class="container">
+        <div class="row">
+          <div id="saludo" class="text-center mt-5">
+            <img name="tiempo" class="w-100">
+            <h1 id="txtsaludo" class="title-saludo mt-5"></h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="container content-form bg-light mt-5" id="contentForm">
+        <div class="row">
+          <form class="my-4">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+  
+      <div class="container content-chat" id="contentChat">
+          <div class="row">
+              <div class="card col-md-4 mt-5 mx-auto" id="nickWrap">
+                  <div class="card-header">
+                      <h5 class="text-center">Bienvenido al Chat de radio, Familia Punto Com</h5>
+                  </div>
+                  <p id="nickError"></p>
+                  <div class="card-body">
+                      <form id="nickform" class="text-center">
+                          <input type="text" id="nickName" class="form-control" placeholder="Ingresa tu nombre para conversar" required>
+                          <button type="submit" class="btn btn-dark mt-4">
+                              <i class="fa fa-sign-in"></i> Ingresar</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+  
+      <div class="container" id="contentWrap">
+        <div class="row">
+          <div class="col-md-8 mt-4">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Tema del día: Ciber delincuencia</h3>
+                </div>
+
+                <div id="chat" class="card-body"></div>
+                <form id="message-form" class="card-footer">
+                    <div class="input-group">
+                        <input type="text" id="message" class="form-control" placeholder="Mensaje" required>
+                        <div class="input-group-append">
+                        <button type="submit" class="btn btn-dark">
+                            Enviar <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                    </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+            <div class="card col-md-4 mt-4">
+                <div class="card-header">
+                    <h3>Usuarios Conectados</h3>
+                </div>
+    
+                <div class="card-body">
+                    <div id="usernames"></div>
+                </div>
+            </div>
+          
+  
+      </div>
+  
+      </div>
+  
+      
+
+    </div>
+
+
+
+    <script>
+      function mostrarChat() {
+        fecha = new Date();
+        hora = fecha.getHours();
+
+        
+        if(hora >= 0 && hora < 6) { // Este muestra el formulario
+          texto = "Buenas madrugadas";
+          imagen = "/img/madrugada.jpg";
+          document.getElementById('contentChat').classList.add('d-block');
+        }
+
+        if(hora >= 6 && hora < 10) { // Este muestra el chat
+          texto = "Tema del dia - Ciber Delicuencia";
+          imagen = "/img/bg-primary.jpg";
+          document.getElementById('contentChat').classList.add('d-block');
+        }
+
+        if(hora >= 10 && hora < 18) { // Este muestra el formulario
+          texto = "Buenas tardes";
+          imagen = "/img/tarde.jpg";
+          document.getElementById('contentForm').classList.add('d-block');
+        }
+
+        if(hora >= 18 && hora < 22) { // Este muestra el chat
+          texto = "Buenas noches";
+          imagen = "/img/noche.jpg";
+          document.getElementById('contentForm').classList.add('d-block');
+        }
+
+
+        document.images["tiempo"].src = imagen;
+
+        document.getElementById('txtsaludo').innerHTML = texto;
+
+      }
+    </script>
+
+    <!-- SCRIPTS =============================-->
+<script src="public/js/jquery-.js"></script>
+<script src="public/js/bootstrap.min.js"></script>
+<script src="public/js/anim.js"></script>
+<script>
+//----HOVER CAPTION---//	  
+jQuery(document).ready(function ($) {
+	$('.fadeshop').hover(
+		function(){
+			$(this).find('.captionshop').fadeIn(150);
+		},
+		function(){
+			$(this).find('.captionshop').fadeOut(150);
+		}
+	);
+});
+</script>
+
+</body>
+</html>
